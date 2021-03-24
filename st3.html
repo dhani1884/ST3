@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ST 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      #head{
+        display:none;
+      }
+      td,
+      p {
+        font-size: 1.2em;
+      }
+
+      td {
+        text-align: left;
+      }
+
+      button,
+      input ,td,p{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow ;Bold', sans-serif;
+      }
+
+      *{
+        margin:10px;
+      }
+
+      hr {
+        background-color: black;
+      }
+      th{
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body style="background-color:LightGray;">
+    <div style="width: 60%; padding-left: 20%">
+      <p style="text-align: center">Details Form</p>
+      <hr>
+      <form action="" onsubmit="return false;">
+      <table>
+        <tr>
+          <td>Name:  </td>
+          <td><input id="name" type="text" minlength="3" required/></td>
+        </tr>
+        <tr>
+          <td>Mob No:  </td>
+          <td><input id="mob" type="tel" minlength="10" maxlength="10" required/></td>
+        </tr>
+        <tr>
+          <td>Email ID:  </td>
+          <td><input id="email" type="email" required/></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td style="text-align: left">
+            <input id="submit"
+              style="
+                background-color: coral;
+                width: 100px;
+                height: 25px;
+                border: 1px solid black;
+                margin-top: 15px;
+              "
+              type="submit"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    </div>
+    <hr>
+    <table id="info" width="100%">
+     <tr id="head">
+      <th>Name</th><th>Mob No</th><th>Email</th>
+     </tr>
+    </table>
+
+  </body>
+   <script>
+        $("#submit").click(function(){
+        var n=$("#name").val();
+        var m=$("#mob").val();
+        var e=$("#email").val();
+        $('#head').show();
+        $('#info').append(`<tr><td style="border:2px solid black;background-color:lightgrey ">${n}</td><td style="border:2px solid black;background-color:lightgrey ">${m}</td><td style="border:2px solid black;background-color:lightgrey ">${e}</td><td><button>Delete</button></td></tr>`);
+        });
+    </script>
+</html>
